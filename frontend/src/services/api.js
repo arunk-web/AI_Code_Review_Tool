@@ -1,0 +1,17 @@
+import axios from 'axios';
+
+const API = axios.create({
+    baseURL : 'http://localhost:5000/api',
+});
+
+API.interceptors.request.use((req) => {
+    const token = localStorage.getItem('token');
+    if(token) {
+        req.headers.Authorization = `Bearer ${token}`;
+    }
+    return req;
+});
+
+export default API;
+
+//Axios interceptor isliye use kiya taaki har API request mein manually token add na karna pade — ek jagah se automatically sab requests mein token attach ho jaata hai
