@@ -26,7 +26,7 @@ const Landing = () => {
 
                 <Link
                 to="/login"
-                className='border border-gray-600 hover:border-gray-400 px-8 py-3 rounded-lg text-lg transition'
+                className='border border-gray-600 hover:border-gray-400 px-8 py-3 rounded-lg font-semibold text-lg transition'
                 >
                 Login
                 </Link>
@@ -52,10 +52,10 @@ const Landing = () => {
                     </p>
                 </div>
 
-                <div>
-                    <div></div>
-                    <h3></h3>
-                    <p>
+                <div className='bg-gray-800 rounded-xl p-6'>
+                    <div className='text-purple-400 text-3xl mb-4'>📋</div>
+                    <h3 className='text-xl font-semibold mb-2'>History</h3>
+                    <p className='text-gray-400'>
                         All reviews are saved — access them anytime
                     </p>
                 </div>
@@ -66,7 +66,7 @@ const Landing = () => {
 
         </div>
 
-    )
+    );
 };
 
 
