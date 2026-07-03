@@ -3,7 +3,7 @@ import {useNavigate,Link} from 'react-router-dom';
 import {useAuth} from '../context/AuthContext';
 import API from '../services/api';
 
-const login = () => {
+const Login = () => {
     const [email,setEmail] = useState('');
     const [password,setPassword] = useState('');
     const [error,setError] = useState('');
@@ -14,15 +14,21 @@ const login = () => {
     const navigate = useNavigate();
 
     const handleSubmit =async (e) => {
-        e.preventDefault;
+        e.preventDefault();
         setError('');
         setLoading(true);
 
+
+        console.log('login attempt:', email,password);
+
         try{
             const res = await API.post('/auth/login',{email,password});
-            login(res.data , res.data.token);
-            navigate('./dashboard');
+            console.log('Response:', res.data);
+            const {token, ...userData } = res.data;
+            login(userData, token);
+            navigate('/dashboard');
         } catch (err){
+            console.log('Error: ', err);
             setError(err.response?.data?.message || 'Something went wrong');
         }
             finally {
@@ -91,4 +97,4 @@ const login = () => {
 };
 
 
-export default login;
+export default Login;

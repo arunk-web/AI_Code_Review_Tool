@@ -4,10 +4,10 @@ const axios = require('axios');
 
 const createReview = async(req,res) => {
     try {
-        const {repoUrl, fileName, code} = req.body;
+        const {fileName, code} = req.body;
 
-        if(!repoUrl || !fileName || !code) {
-            return res.status(400).json({message : "repoUrl, fileName and code are required"});
+        if(!fileName || !code) {
+            return res.status(400).json({message : "fileName and code are required"});
         }
 
         // openAI call       OpenAI ke server pe request bhej rahe hain — gpt-3.5-turbo model use kar rahe hain jo code analyze karega
@@ -45,7 +45,7 @@ const createReview = async(req,res) => {
         //save the review in DB
         const review = await Review.create({
             user : req.user._id,
-            repoUrl,
+            
             fileName,
             code,
             suggestions

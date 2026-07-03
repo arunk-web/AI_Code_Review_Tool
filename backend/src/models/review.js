@@ -27,10 +27,10 @@ const reviewSchema = new mongoose.Schema({
         required : true
     },
 
-    repoUrl : {
-        type : String,
-        required : true
-    },
+    // repoUrl : {
+    //     type : String,
+    //     required : true
+    // },
 
     fileName : {
         type : String,

@@ -24,8 +24,8 @@ const signup = () => {
                 email,
                 password
             });
-
-            login(res.data,res.data.token);
+            const {token, ...userData} = res.data;
+            login(userData, token);
             navigate('/dashboard');
 
         } catch (err) {
