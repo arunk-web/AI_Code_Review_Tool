@@ -6,7 +6,7 @@ const cors = require('cors');
 const authRoutes = require('./routes/authRoutes');
 const reviewRoutes = require('./routes/reviewRoutes');
 
-
+const chatRoutes = require('./routes/chatRoutes');
 
 
 dotenv.config();
@@ -21,6 +21,7 @@ app.use(express.json());
 app.use('/api/auth', authRoutes);
 // "ab saari auth routes /api/auth se start hongi — matlab signup ka URL hoga /api/auth/signup aur login ka /api/auth/login"
 app.use('/api/reviews', reviewRoutes);
+app.use('/api/chats', chatRoutes);
 
 //test route haiii
 app.get('/', (req, res) => {
