@@ -4,7 +4,7 @@ import Landing from './pages/Landing';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Dashboard from './pages/Dashboard';
-import Review from './pages/Review';
+// import Review from './pages/Review';
 import ProtectedRoute from './components/ProtectedRoute';
 import Navbar from './components/Navbar';
 
@@ -25,12 +25,12 @@ function App() {
             </ProtectedRoute>
           } />
 
-          <Route path="/review/:id" element={
+          {/* <Route path="/review/:id" element={
             <ProtectedRoute>
               <Review/>
             </ProtectedRoute>
             // :id ek dynamic part hai — matlab /review/abc123 ya /review/xyz456 dono is route se match karenge. abc123 ya xyz456 Review component mein useParams() se milega — har review ka alag unique URL hoga
-          } />
+          } /> */}
         </Routes>
       </BrowserRouter>
     </AuthProvider>
