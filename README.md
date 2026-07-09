@@ -31,6 +31,7 @@ An AI-powered code assistant built with the MERN stack. Chat with AI to review, 
 
 ## 📁 Project Structure
 
+```
 ai-code-review/
 ├── frontend/
 │   ├── src/
@@ -63,6 +64,8 @@ ai-code-review/
 │   │   └── chatRoutes.js
 │   └── server.js
 
+```
+
 ## ⚙️ Installation & Setup
 
 ### Prerequisites
@@ -78,10 +81,12 @@ npm install
 ```
 
 Create `.env` file in backend folder:
+```
 PORT=5000
 MONGO_URI=mongodb://localhost:27017/ai-code-review
 JWT_SECRET=your_secret_key
 GROQ_API_KEY=your_groq_api_key
+```
 
 Start backend:
 ```bash
