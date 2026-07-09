@@ -23,12 +23,12 @@ const Navbar = () => {
             <span className="text-gray-400 text-sm hidden sm:block">
               {user.name}
             </span>
-            <Link
+            {/* <Link
               to="/dashboard"
               className="text-gray-300 hover:text-white text-sm font-medium transition"
             >
-              Dashboard
-            </Link>
+              
+            </Link> */}
             <button
               onClick={handleLogout}
               className="bg-gray-800 hover:bg-gray-700 text-sm px-4 py-2 rounded-lg transition"
