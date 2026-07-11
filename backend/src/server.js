@@ -10,7 +10,7 @@ const app = express();
 
 
 app.use(cors({
-  origin: 'https://ai-code-review-tool-gold.vercel.app',
+  origin: 'https://ai-code-review-tool-l4ymjwffq-arunk1.vercel.app/',
   credentials: true
 }));
 
