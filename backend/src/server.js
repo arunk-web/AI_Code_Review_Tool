@@ -10,7 +10,10 @@ const app = express();
 
 
 app.use(cors({
-  origin: 'https://ai-code-review-tool-l4ymjwffq-arunk1.vercel.app',
+  origin: [
+    'http://localhost:5173',
+    'https://ai-code-review-tool-gold.vercel.app'
+  ],
   credentials: true
 }));
 
