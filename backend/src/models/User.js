@@ -18,6 +18,14 @@ const userSchema = new mongoose.Schema({
         type:String,
         required: true,
         minlength: 6
+    },
+    messageCount: {
+        type: Number,
+        default : 0
+    },
+    lastResetTime : {
+        type: Date,
+        default: Date.now
     }
 }, {
     timestamps:true
