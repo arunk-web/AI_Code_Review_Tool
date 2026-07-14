@@ -34,7 +34,7 @@ const chat = async (req, res) => {
 
         const groq = new Groq({apiKey: process.env.GROQ_API_KEY});   //groq initialisation
 
-        const cleanMessages = messages.app({role,content}) => ({role,content});
+        const cleanMessages = messages.map(({role,content}) => ({role,content}));
 
         //get reply through AI
         const completion =await groq.chat.completions.create({
