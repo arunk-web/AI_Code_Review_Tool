@@ -13,7 +13,7 @@ const Dashboard = () => {
   const [loading, setLoading] = useState(false);
   const [currentChatId, setCurrentChatId] = useState(null);
   const [chats, setChats] = useState([]);
-  const [reviews, setReviews] = useState([]);
+  
   const [chatsLoading, setChatsLoading] = useState(true);
   const [openMenu, setOpenMenu] = useState(null);
 
@@ -23,7 +23,6 @@ const Dashboard = () => {
 
   useEffect(() => {
     fetchChats();
-    fetchReviews();
   }, []);
 
   const fetchChats = async () => {
@@ -37,14 +36,14 @@ const Dashboard = () => {
     }
   };
 
-  const fetchReviews = async () => {
-    try {
-      const res = await API.get('/reviews');
-      setReviews(res.data);
-    } catch (err) {
-      console.log(err);
-    }
-  };
+  // const fetchReviews = async () => {
+  //   try {
+  //     const res = await API.get('/reviews');
+  //     setReviews(res.data);
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // };
 
   const loadChat = async (chatId) => {
     try {
